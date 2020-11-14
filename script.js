@@ -1,7 +1,7 @@
 const bolas = document.getElementsByClassName('ball');
 const textoCor = document.getElementById('rgb-color');
-const textoResposta = document.getElementById('answer')
-const botaoReiniciar = document.getElementById('reset-game')
+const textoResposta = document.getElementById('answer');
+const botaoReiniciar = document.getElementById('reset-game');
 const cores = [];
 
 function numeroAleatorio(mul) {
@@ -14,7 +14,7 @@ function corAleatoria() {
     return rgb;
 }
 
-function cliqueNaBola(event){
+function cliqueNaBola(event) {
     const corSelecionada = event.target.style.backgroundcolor;
     if (corSelecionada === textoCor.textContent) {
         textoResposta.textContent = 'Acertou';
@@ -31,7 +31,7 @@ for (let bola = 0; bola < bolas.length; bola += 1) {
 }
 
 function adicionaCorAleatoria() {
-    textoCor.textContent = cores[numeroAleatorio(6)]
+    textoCor.textContent = cores[numeroAleatorio(6)];
 }
 
 adicionaCorAleatoria();
