@@ -17,7 +17,7 @@ function corAleatoria() {
 function cliqueNaBola(event) {
     const corSelecionada = event.target.style.backgroundcolor;
     if (corSelecionada === textoCor.textContent) {
-        textoResposta.textContent = 'Acertou';
+        textoResposta.textContent = 'Acertou!';
     } else {
         textoResposta.textContent = 'Errou! Tente novamente!';
     }
