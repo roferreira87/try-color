@@ -1,10 +1,11 @@
 const bolas = document.getElementsByClassName('ball');
 const textoCor = document.getElementById('rgb-color');
 const textoResposta = document.getElementById('answer')
+const botaoReiniciar = document.getElementById('reset-game')
 const cores = [];
 
-function numeroAleatorio() {
-    const numero = Math.floor(Math.random() * 256);
+function numeroAleatorio(mul) {
+    const numero = Math.floor(Math.random() * mul);
     return numero;
 }
 
@@ -13,14 +14,12 @@ function corAleatoria() {
     return rgb;
 }
 
-function cliqueNaBola(){
+function cliqueNaBola(event){
     const corSelecionada = event.target.style.backgroundcolor;
     if (corSelecionada === textoCor.textContent) {
-        textoResposta.textContent = 'Acertou'
-
+        textoResposta.textContent = 'Acertou';
     } else {
-        textoResposta.textContent = 'Errou! Tente novamente.'
-
+        textoResposta.textContent = 'Errou! Tente novamente!';
     }
 }
 
@@ -35,4 +34,10 @@ function adicionaCorAleatoria() {
     textoCor.textContent = cores[numeroAleatorio(6)]
 }
 
-adicionaCorAleatoria()
+adicionaCorAleatoria();
+
+function reiniciajogo() {
+    window.location.reload();
+}
+
+botaoReiniciar.addEventListener('click', reiniciajogo);
